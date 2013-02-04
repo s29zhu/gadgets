@@ -41,7 +41,7 @@ int main(){
     std::vector<int> vector4(vector1.rbegin(), vector1.rend() - 1);
     print(vector4);
     //copy constructor
-    cout<<"vector 5 copy constructor vector 2"<<endl;
+    cout<<"vector 5 cpoied from constructor vector 2"<<endl;
     std::vector<int> vector5(vector2);
     print(vector5);
     //initializer list constructor
@@ -49,8 +49,14 @@ int main(){
     //as an option to the compiling command
     //(or -std=c++11 in gcc 4.7). Note that no compiler have complete support
     //for C++11 yet.
-    std::list<int> li(10,10);
+    cout<<"initializer list constructor"<<endl;
     std::vector<int> vector6={10, 10, 10};
     print(vector6);
+    //move constructor
+    std::vector<int> vector7 = std::move(vector1);
+    cout<<"after moving vector1 to vector7. Vector7 is:"<<endl;
+    print(vector7);
+    cout<<"after moving vector1 to vector7. vector 1 is:"<<endl;
+    print(vector1);
     return 1;
 }
