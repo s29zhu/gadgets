@@ -1,7 +1,9 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+//include new if we want to use keyword new
 #include <new>
+//limits.h contain definition of INT_MAX
 #include <limits.h>
 
 using namespace std;
@@ -61,6 +63,10 @@ int main(void){
     stringstream *ss = new stringstream("123");
     *ss >> test;
     cout<<"test "<<test<<endl;
+    //declare a temporary object of stringstream, the problem is we cannot
+    //extract it to string object. 
+    string test_string;
+    stringstream("hello world") >> test_string; //cannot be compiled
     delete[] stu;
     return 1;
 }
