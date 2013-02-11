@@ -1,6 +1,10 @@
+/*
+*Author: Shashazhu  
+*Test the endianess of pc
+*Big endian: most significant byte stores first
+*Little endian: least significant byte stores first
+*/
 #include <iostream>
-#include <sstream>
-#include <string>
 using namespace std;
 
 int main(void){
