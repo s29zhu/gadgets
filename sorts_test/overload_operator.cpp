@@ -8,9 +8,11 @@ Temp *Temp::operator+(Temp t){
     obj->x = x + t.x;
     obj->y = y + t.y;
     obj->z = z + t.z;
+    //c++ pass value rather than passing reference.
     //the copy construct of the class is called at this time. A copy of thi
     //object is returned and stored in the caller. Regardless of we return a
-    //reference or variable
+    //reference or variable. 
+   
     return obj;
 
 }
