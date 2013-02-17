@@ -23,7 +23,7 @@ void Temp::print_all(){
 // sum_of_all is a friend function. C++ only pass the value of the object, thus
 // change of obj.sum only cause effect inside the function. The actual value of
 // sum inside obj is not affected.
-int sum_of_all(Temp obj){
+int sum_of_all(Temp &obj){
     obj.sum = obj.x + obj.y + obj.z;
     return obj.sum;
 }
@@ -37,6 +37,7 @@ int main(void){
     temp1.print_all();
     //created temporary object Temp(2, 2, 2)
     Temp(2,2,2).print_all();
+    sum_of_all(&(Temp(2, 2, 2)));
     return 1;
 }
 

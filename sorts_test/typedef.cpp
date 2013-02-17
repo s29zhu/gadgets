@@ -66,7 +66,12 @@ int main(void){
     //declare a temporary object of stringstream, the problem is we cannot
     //extract it to string object. 
     string test_string;
+    int test_int;
     stringstream("hello world") >> test_string; //cannot be compiled
+    stringstream("hello world") >> test_int; //this will work
+    // from http://www.cplusplus.com/reference/istream/istream/operator%3E%3E/
+    // extract to numbers are member function. Extract to string is friend or
+    // global function
     delete[] stu;
     return 1;
 }

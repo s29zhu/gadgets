@@ -3,6 +3,7 @@
 *Test the endianess of pc
 *Big endian: most significant byte stores first
 *Little endian: least significant byte stores first
+*least significant byte/bit means the right most byte/bit
 */
 #include <iostream>
 using namespace std;

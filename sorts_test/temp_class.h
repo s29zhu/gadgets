@@ -15,8 +15,9 @@ class Temp{
             y = y1;
             z = z1;
         }
+        Temp *operator +(Temp t);
         ~Temp(){
         }
     friend
-        int sum_of_all(Temp obj);
+        int sum_of_all(Temp &obj);
 };
