@@ -20,6 +20,23 @@ void Temp::print_all(){
     cout<<"z = "<<z<<endl;
     cout<<"sum = "<<sum<<endl;
 }
+
+Temp* Temp::operator+(Temp t){
+    Temp *temp = new Temp(0, 0, 0);
+    temp->x = x + t.x;
+    temp->y = y + t.y;
+    temp->z = z + t.z;
+    return temp;
+}
+
+Temp operator+(Temp &t1, Temp t2){
+    Temp *obj = new Temp(0, 0, 0);
+    obj->x = t1.x + t2.x;
+    obj->y = t1.y + t2.y;
+    obj->z = t1.z + t2.z;
+    return *obj;
+}
+
 // sum_of_all is a friend function. C++ only pass the value of the object, thus
 // change of obj.sum only cause effect inside the function. The actual value of
 // sum inside obj is not affected.
@@ -37,7 +54,9 @@ int main(void){
     temp1.print_all();
     //created temporary object Temp(2, 2, 2)
     Temp(2,2,2).print_all();
-    sum_of_all(&(Temp(2, 2, 2)));
+    Temp(0, 1, 2)+temp1;//the + is overloaded as member function
+    temp1 + temp2;//My guess is there is going to be compilation an error. 
+    sum_of_all(temp1);
     return 1;
 }
 

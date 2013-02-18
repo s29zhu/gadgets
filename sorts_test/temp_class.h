@@ -20,4 +20,7 @@ class Temp{
         }
     friend
         int sum_of_all(Temp &obj);
+    //for every friend function, we need keyword friend before them
+    friend
+        Temp operator+(Temp &t1, Temp t2);
 };
