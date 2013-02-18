@@ -1,3 +1,6 @@
+//reponse to question
+//http://stackoverflow.com/questions/14930512/c-iostream-read-with-delimiter-of\
+//-multiple-bytes
 #include <iostream>
 #include <string>
 
@@ -6,11 +9,11 @@ using namespace std;
 int main(void){
     string str;
     int length_of_delimiter = 3;
-    char *delimiter = new char[length_of_delimiter];
+    // let the dilimiter be "ABC"
+    const char *delimiter = "ABC";
     char temp = '0';
     bool over = false;
 
-    delimiter = "ABC";
     cout<<"Enter the stream"<<endl;
 
     temp =  cin.get();
@@ -18,7 +21,13 @@ int main(void){
     while(over == false){ 
             for(i = 0; temp  == delimiter[i] && i < length_of_delimiter; i++){
                 str += temp;
-                temp = cin.get();
+                if(cin.good())
+                    temp = cin.get();
+                else{
+                    cout<<"error"<<endl;
+                    break;
+                }
+                    
             }
             if(i == length_of_delimiter){
                 //chop off the delimiter
@@ -27,7 +36,12 @@ int main(void){
             }
             else {
                 str += temp;
-                temp = cin.get();
+                if(cin.good())
+                    temp = cin.get();
+                else{
+                    cout<<"error"<<endl;
+                    break;
+                }
             }
     }
     cout<<"The stream we wanted is: "<<str<<endl;
