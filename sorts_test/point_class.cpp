@@ -2,7 +2,7 @@
 #include <istream>
 #include <new>
 #include <string>
-#include "temp_class.h"
+#include "point_class.h"
 
 using namespace std;
 
@@ -55,7 +55,7 @@ int main(void){
     //created temporary object Point(2, 2, 2)
     Point(2,2,2).print_all();
     Point(0, 1, 2)+temp1;//the + is overloaded as member function
-    temp1 + temp2;//My guess is there is going to be compilation an error. 
+//    temp1 + temp2;//My guess is there is going to be compilation an error. 
     //Since the compiler does not know which function to choose. Both of the
     //functions can be overloaded.
     return 1;
